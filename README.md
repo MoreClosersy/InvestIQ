@@ -23,7 +23,7 @@ Output: 7-section Markdown report
 
 ## Demo
 
-![Demo](docs/screenshot.png)
+![Demo](docs/screenshot.png?v=2)
 
 ## Architecture
 
