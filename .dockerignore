@@ -1,0 +1,40 @@
+# Virtual environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# IDE / tooling
+.vscode/
+.idea/
+.claude/
+
+# Git
+.git/
+.gitignore
+
+# Secrets — env vars are injected via docker-compose env_file at runtime
+.env
+
+# Tests (not needed in the production image)
+tests/
+
+# System files
+.DS_Store
+
+# Build artifacts
+*.egg-info/
+dist/
+build/
+
+# Docs (optional inside the image)
+README.md
+PROGRESS.md
+
+# Local outputs
+outputs/
