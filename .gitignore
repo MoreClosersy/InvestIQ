@@ -7,3 +7,6 @@ venv/
 .DS_Store
 *.egg-info/
 .ipynb_checkpoints/
+
+# Agent harness config (local Pi/remote-pi state, not project code)
+.pi/
