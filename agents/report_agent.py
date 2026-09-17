@@ -186,18 +186,31 @@ def report_node(state: AgentState) -> dict:
     metrics = state.get("financial_metrics", {})
     historical = state.get("historical_data", {})
 
-    # Defensive: skip the LLM if analysis produced nothing usable.
+    # Defensive: skip the LLM if analysis produced nothing usable (e.g. the
+    # Analysis node short-circuited because the ticker has no financial data).
     if (
         not state.get("strengths")
         and not state.get("risks")
         and not state.get("analyst_summary")
     ):
-        print("[Report] No analysis available, generating minimal report")
+        print(f"[Report] {state.get('ticker')}: no analysis available, generating warning report")
+        has_financial = (
+            snapshot.get("current_price", 0) > 0
+            or metrics.get("market_cap", 0) > 0
+        )
+        if not has_financial:
+            status = (
+                f"股票代码 {state.get('ticker', 'N/A')} 无效或无法获取财务数据，"
+                f"未生成研究报告。"
+            )
+        else:
+            status = "数据不足，未生成完整报告。"
+        errors = "; ".join(state.get("errors", [])) or "无"
         return {
             "final_report": (
                 f"# Investment Research Report: {state.get('ticker', 'N/A')}\n\n"
-                f"**Status:** Insufficient data to generate full report.\n\n"
-                f"**Errors:** {'; '.join(state.get('errors', []))}\n"
+                f"**状态：** {status}\n\n"
+                f"**错误信息：** {errors}\n"
             ),
         }
 

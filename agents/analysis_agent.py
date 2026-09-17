@@ -146,18 +146,26 @@ def analysis_node(state: AgentState) -> dict:
     metrics = state.get("financial_metrics", {})
     historical = state.get("historical_data", {})
 
-    # Defensive: if both upstream agents produced nothing useful, skip the LLM.
-    has_news = bool(state.get("news_findings"))
-    has_financial = bool(metrics.get("company_name")) or snapshot.get("current_price", 0) > 0
+    # Financial data is the ground truth for equity analysis. If yfinance
+    # returned nothing usable (price and market cap both zero), the ticker is
+    # almost certainly invalid/delisted (or the data source is down). Skip the
+    # LLM instead of hallucinating an analysis from generic news.
+    has_financial = (
+        snapshot.get("current_price", 0) > 0
+        or metrics.get("market_cap", 0) > 0
+    )
 
-    if not has_news and not has_financial:
-        print("[Analysis] Insufficient data, skipping LLM call")
+    if not has_financial:
+        print(f"[Analysis] {state['ticker']}: no financial data, skipping LLM call")
         return {
             "strengths": [],
             "risks": [],
-            "analyst_summary": "Insufficient data to produce analysis.",
-            "data_completeness": "Both research and financial data missing.",
-            "errors": ["[Analysis] Both research and financial data missing"],
+            "analyst_summary": "",
+            "data_completeness": "无有效财务数据（股票代码无效或数据源异常）。",
+            "errors": [
+                f"[Analysis] 无法获取 {state['ticker']} 的财务数据"
+                f"（股票代码无效或数据源异常），已跳过分析以避免生成无依据内容"
+            ],
         }
 
     chain = _build_chain()
