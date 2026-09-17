@@ -1,0 +1,8 @@
+[
+  {"ticker": "AAPL", "label": "large-cap"},
+  {"ticker": "MSFT", "label": "large-cap"},
+  {"ticker": "NVDA", "label": "large-cap"},
+  {"ticker": "SOFI", "label": "small-cap"},
+  {"ticker": "ROKU", "label": "small-cap"},
+  {"ticker": "ZZZZZZ", "label": "invalid"}
+]

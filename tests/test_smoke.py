@@ -16,6 +16,9 @@ MODULES = [
     "graph.workflow",
     "api",
     "api.main",
+    "eval",
+    "eval.fixtures",
+    "eval.run_eval",
 ]
 
 
