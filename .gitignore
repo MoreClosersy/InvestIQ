@@ -10,3 +10,6 @@ venv/
 
 # Agent harness config (local Pi/remote-pi state, not project code)
 .pi/
+
+# Personal study / interview-prep notes (local only, never published)
+docs/interview-InvestIQ/
