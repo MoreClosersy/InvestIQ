@@ -14,9 +14,9 @@ from typing import Any
 
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
 
 from graph.state import AgentState
+from tools.llm import build_chat_model
 from tools.search_tool import search_company_news
 
 
@@ -65,7 +65,7 @@ def _format_news_for_prompt(items: list[dict[str, Any]]) -> str:
 
 def _build_chain() -> Any:
     """Construct the LCEL summarization chain."""
-    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.3)
+    llm = build_chat_model(temperature=0.3)
     prompt = ChatPromptTemplate.from_messages(
         [("system", _SYSTEM_PROMPT), ("human", _HUMAN_PROMPT)]
     )
@@ -87,14 +87,28 @@ def research_node(state: AgentState) -> dict:
             "errors": [f"[Research] No news found for {ticker}"],
         }
 
-    chain = _build_chain()
-    summary = chain.invoke(
-        {
-            "company": company_name,
-            "ticker": ticker,
-            "news_block": _format_news_for_prompt(raw_results),
+    # Summarization is best-effort: if the LLM call fails, keep the raw news
+    # items so downstream nodes can still use them, and record the failure on
+    # the shared ``errors`` channel instead of aborting the whole workflow.
+    try:
+        chain = _build_chain()
+        summary = chain.invoke(
+            {
+                "company": company_name,
+                "ticker": ticker,
+                "news_block": _format_news_for_prompt(raw_results),
+            }
+        )
+    except Exception as exc:
+        print(f"[Research] News summarization failed for {ticker}: {exc!r}")
+        return {
+            "news_findings": raw_results,
+            "market_context": (
+                "News items were retrieved but automated summarization failed; "
+                "use the key news items directly."
+            ),
+            "errors": [f"[Research] News summarization failed for {ticker}: {exc!r}"],
         }
-    )
 
     print(f"[Research] Found {len(raw_results)} news items for {ticker}")
     return {

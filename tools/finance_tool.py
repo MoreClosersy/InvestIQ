@@ -8,13 +8,68 @@ failure, so callers never see KeyError or uncaught exceptions.
 Why split: ``.fast_info`` is a cheap quote endpoint, while ``.info`` triggers
 a slower scrape — keep them separate so a slow/failing ``.info`` call doesn't
 take the snapshot down with it.
+
+Timeout: yfinance applies its own per-request timeout (30s for quote and
+fundamentals, 10s for history), but those are not configurable per call for
+``fast_info`` or ``.info``. ``_bounded`` adds a wall-clock cap
+(``YFINANCE_TIMEOUT_SECONDS``, default 15) so a stalled backend cannot block
+the workflow. On timeout the underlying request keeps running in a daemon
+thread until yfinance's internal timeout fires; the caller gets the defaults
+plus an ``error`` key and the workflow continues.
 """
 from __future__ import annotations
 
-from typing import Any
+import functools
+import os
+import threading
+from typing import Any, Callable, TypeVar
 
 import numpy as np
 import yfinance as yf
+
+DEFAULT_TIMEOUT_SECONDS = 15.0
+
+_F = TypeVar("_F", bound=Callable[..., dict[str, Any]])
+
+
+def _timeout_seconds() -> float:
+    return float(os.getenv("YFINANCE_TIMEOUT_SECONDS", DEFAULT_TIMEOUT_SECONDS))
+
+
+def _bounded(
+    defaults_factory: Callable[[], dict[str, Any]],
+) -> Callable[[_F], _F]:
+    """Cap a fetcher's wall-clock time; return defaults + error on timeout."""
+
+    def decorator(fn: _F) -> _F:
+        @functools.wraps(fn)
+        def wrapper(*args: Any, **kwargs: Any) -> dict[str, Any]:
+            timeout = _timeout_seconds()
+            result: list[Any] = []
+
+            def run() -> None:
+                try:
+                    result.append(fn(*args, **kwargs))
+                except BaseException as exc:  # re-raised in the caller
+                    result.append(exc)
+
+            worker = threading.Thread(target=run, daemon=True)
+            worker.start()
+            worker.join(timeout)
+
+            if worker.is_alive():
+                out = defaults_factory()
+                out["error"] = f"timeout after {timeout:g}s"
+                return out
+            if not result:
+                raise RuntimeError("fetcher returned no result")
+            if isinstance(result[0], BaseException):
+                raise result[0]
+            return result[0]
+
+        return wrapper  # type: ignore[return-value]
+
+    return decorator
 
 
 # ---------- defaults ----------
@@ -90,6 +145,7 @@ def _as_str(value: Any) -> str:
 
 # ---------- public API ----------
 
+@_bounded(_snapshot_defaults)
 def get_stock_snapshot(ticker: str) -> dict[str, Any]:
     """Return current quote snapshot via yfinance ``fast_info`` (cheap call)."""
     out = _snapshot_defaults()
@@ -111,6 +167,7 @@ def get_stock_snapshot(ticker: str) -> dict[str, Any]:
     return out
 
 
+@_bounded(_metrics_defaults)
 def get_financial_metrics(ticker: str) -> dict[str, Any]:
     """Return fundamentals via ``.info``. Picks specific keys, no full-dict iteration."""
     out = _metrics_defaults()
@@ -134,6 +191,7 @@ def get_financial_metrics(ticker: str) -> dict[str, Any]:
     return out
 
 
+@_bounded(_historical_defaults)
 def get_historical_prices(ticker: str, period: str = "3mo") -> dict[str, Any]:
     """Return summary stats over ``period`` (no full time series).
 
@@ -145,7 +203,7 @@ def get_historical_prices(ticker: str, period: str = "3mo") -> dict[str, Any]:
     """
     out = _historical_defaults()
     try:
-        hist = yf.Ticker(ticker).history(period=period)
+        hist = yf.Ticker(ticker).history(period=period, timeout=_timeout_seconds())
         if hist is None or hist.empty:
             out["error"] = f"empty history for {ticker} over {period}"
             return out

@@ -11,10 +11,10 @@ from __future__ import annotations
 from typing import Any
 
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
 from pydantic import BaseModel, Field
 
 from graph.state import AgentState
+from tools.llm import build_chat_model
 
 
 class AnalysisOutput(BaseModel):
@@ -132,7 +132,7 @@ def _format_news_items(news_findings: list[dict]) -> str:
 
 def _build_chain() -> Any:
     """Build the structured-output LCEL chain."""
-    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.3)
+    llm = build_chat_model(temperature=0.3)
     structured_llm = llm.with_structured_output(AnalysisOutput)
     prompt = ChatPromptTemplate.from_messages(
         [("system", _SYSTEM_PROMPT), ("human", _HUMAN_PROMPT)]

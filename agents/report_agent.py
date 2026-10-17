@@ -14,9 +14,9 @@ from typing import Any
 
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
 
 from graph.state import AgentState
+from tools.llm import build_chat_model
 
 
 _SYSTEM_PROMPT = """You are a senior equity research analyst writing a polished investment research report. Your job is to synthesize provided data into a well-structured Markdown report.
@@ -173,7 +173,7 @@ def _format_volume(value: int) -> str:
 
 def _build_chain() -> Any:
     """Build the report generation LCEL chain (free-form Markdown output)."""
-    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.5)
+    llm = build_chat_model(temperature=0.5)
     prompt = ChatPromptTemplate.from_messages(
         [("system", _SYSTEM_PROMPT), ("human", _HUMAN_PROMPT)]
     )
