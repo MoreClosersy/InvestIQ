@@ -35,6 +35,7 @@ class AgentState(TypedDict):
     final_report: str
 
     # --- Control ---
+    critic_report: dict
     errors: Annotated[list[str], add]
 
 
@@ -53,5 +54,6 @@ def initial_state(ticker: str) -> AgentState:
         analyst_summary="",
         data_completeness="",
         final_report="",
+        critic_report={},
         errors=[],
     )

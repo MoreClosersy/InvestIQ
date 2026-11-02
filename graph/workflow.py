@@ -11,11 +11,13 @@ touch disjoint single-value fields, so no merge conflicts occur.
 """
 from __future__ import annotations
 
+import os
 from typing import Any
 
 from langgraph.graph import END, START, StateGraph
 
 from agents.analysis_agent import analysis_node
+from agents.critic import critic_node
 from agents.financial_agent import financial_node
 from agents.report_agent import report_node
 from agents.research_agent import research_node
@@ -39,8 +41,15 @@ def build_graph() -> Any:
     workflow.add_edge("research", "analysis")
     workflow.add_edge("financial", "analysis")
 
-    # Sequential tail: analysis -> report -> END.
-    workflow.add_edge("analysis", "report")
+    # Sequential tail: analysis -> (critic) -> report -> END.
+    # The critic is opt-in and shadow-only for now: it records violations but
+    # does not route, so the default topology stays a fixed DAG.
+    if os.getenv("CRITIC_ENABLED", "0").lower() not in ("0", "false", ""):
+        workflow.add_node("critic", critic_node)
+        workflow.add_edge("analysis", "critic")
+        workflow.add_edge("critic", "report")
+    else:
+        workflow.add_edge("analysis", "report")
     workflow.add_edge("report", END)
 
     return workflow.compile()
