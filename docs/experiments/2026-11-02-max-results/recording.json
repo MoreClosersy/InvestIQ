@@ -1,0 +1,127 @@
+{
+  "recorded_at": "2026-11-02T13:15:53+00:00",
+  "query": "{ticker} stock news latest earnings",
+  "max_results": 20,
+  "tickers": {
+    "AAPL": {
+      "query": "AAPL stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "MSFT": {
+      "query": "MSFT stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "GOOGL": {
+      "query": "GOOGL stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "AMZN": {
+      "query": "AMZN stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "NVDA": {
+      "query": "NVDA stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "META": {
+      "query": "META stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "TSLA": {
+      "query": "TSLA stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "JPM": {
+      "query": "JPM stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "V": {
+      "query": "V stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "WMT": {
+      "query": "WMT stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "XOM": {
+      "query": "XOM stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "JNJ": {
+      "query": "JNJ stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "SOFI": {
+      "query": "SOFI stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "ROKU": {
+      "query": "ROKU stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "PLUG": {
+      "query": "PLUG stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "LCID": {
+      "query": "LCID stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "NIO": {
+      "query": "NIO stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "BYND": {
+      "query": "BYND stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "TLRY": {
+      "query": "TLRY stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "SPCE": {
+      "query": "SPCE stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "ZZZZZZ": {
+      "query": "ZZZZZZ stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "INVALID": {
+      "query": "INVALID stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "NOTAREAL": {
+      "query": "NOTAREAL stock news latest earnings",
+      "results": 20,
+      "error": null
+    },
+    "12345": {
+      "query": "12345 stock news latest earnings",
+      "results": 20,
+      "error": null
+    }
+  }
+}

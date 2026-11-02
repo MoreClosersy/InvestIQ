@@ -41,40 +41,14 @@ QUERIES: dict[str, str] = {
 
 # 与 docs/experiments/2026-11-02-coverage/coverage_experiment.py 同口径。
 # 试点脚本刻意自带一份，避免为一个实验去改 eval/ 的生产代码。
-SLOTS: dict[str, re.Pattern[str]] = {
-    "财报/指引": re.compile(
-        r"\b(earnings|eps|revenue|guidance|outlook|quarter|fiscal|q[1-4])\b", re.I),
-    "分析师动作": re.compile(
-        r"\b(upgrade|downgrade|price target|analyst|rating|reiterat|initiat|"
-        r"overweight|underweight|buy rating|sell rating)\b", re.I),
-    "重大事件": re.compile(
-        r"\b(acquisition|acquire|merger|takeover|ceo|cfo|resign|appoint|"
-        r"layoff|bankrupt|ipo|spin-off|stake|board)\b", re.I),
-    "风险/法律": re.compile(
-        r"\b(lawsuit|sue[sd]?|investigation|regulat\w*|sec\b|fine[sd]?|"
-        r"penalt\w*|recall|probe|antitrust|class action|settle\w*)\b", re.I),
-    "产品/战略": re.compile(
-        r"\b(launch\w*|unveil\w*|partner\w*|expand\w*|new product|contract|"
-        r"deal|investment|joint venture)\b", re.I),
-}
-
-AGGREGATOR = {
-    "public.com", "finance.yahoo.com", "marketbeat.com", "investing.com",
-    "zacks.com", "google.com", "robinhood.com", "stocktitan.net",
-    "seekingalpha.com", "stockanalysis.com", "tipranks.com", "morningstar.com",
-    "pricetargetresearch.com", "wallstreethorizon.com", "us.plus500.com",
-    "bitget.com", "fool.com",
-}
-
-
-def domain_of(url: str) -> str:
-    return urllib.parse.urlparse(url).netloc.lower().removeprefix("www.")
-
-
-def slots_of(items: list[dict]) -> set[str]:
-    text = "\n".join(f"{i.get('title','')}\n{i.get('content','')}" for i in items)
-    return {name for name, rx in SLOTS.items() if rx.search(text)}
-
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # docs/experiments
+from slot_metric import (  # noqa: E402
+    AGGREGATOR,
+    SLOTS,
+    domain_of,
+    loose_slots,
+    strict_slots,
+)
 
 # ------------------------------------------------------------------ record
 
@@ -144,40 +118,6 @@ def record_control() -> int:
 
 # ------------------------------------------------------------------ analyze
 
-NAMES = {
-    "AAPL": r"apple",
-    "JPM": r"jpmorgan|\bjpm\b",
-    "LCID": r"lucid",
-    "NIO": r"\bnio\b",
-    "SOFI": r"sofi",
-}
-
-
-def _sentences(text: str) -> list[str]:
-    return [x.strip() for x in re.split(r"(?<=[.!?])\s+|\n+", text) if x.strip()]
-
-
-def strict_slots(items: list[dict], ticker: str) -> set[str]:
-    """只在"标题"或"提到公司名的句子里"认槽位。
-
-    聚合页的导航栏（SEC Filings / Risk Factors / IPO Calendar）会让宽松规则全部命中，
-    这些不是证据。要求关键词与公司名同句，能把站点框架文字挡掉。
-    """
-    name_rx = re.compile(NAMES[ticker], re.I)
-    hits: set[str] = set()
-    for it in items:
-        title = it.get("title", "") or ""
-        for slot, rx in SLOTS.items():
-            if rx.search(title):
-                hits.add(slot)
-                continue
-            for sent in _sentences(it.get("content", "") or ""):
-                if rx.search(sent) and name_rx.search(sent):
-                    hits.add(slot)
-                    break
-    return hits
-
-
 def _dedupe(groups: list[list[dict]]) -> list[dict]:
     seen: set[str] = set()
     out: list[dict] = []
@@ -205,7 +145,7 @@ def analyze() -> int:
 
     def arm_stats(items_by_ticker: dict[str, list[dict]], searches: int) -> dict:
         docs = [len(v) for v in items_by_ticker.values()]
-        loose = [len(slots_of(v)) for v in items_by_ticker.values()]
+        loose = [len(loose_slots(v)) for v in items_by_ticker.values()]
         strict = [len(strict_slots(v, t)) for t, v in items_by_ticker.items()]
         return {
             "searches": searches,
@@ -272,7 +212,7 @@ def analyze() -> int:
                 "ticker": t,
                 "docs": {a: len(per[t][a]) for a in arms},
                 "strict": {a: sorted(strict_slots(per[t][a], t)) for a in arms},
-                "loose": {a: sorted(slots_of(per[t][a])) for a in arms},
+                "loose": {a: sorted(loose_slots(per[t][a])) for a in arms},
             }
             for t in tickers
         ],

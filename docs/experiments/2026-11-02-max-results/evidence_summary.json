@@ -1,0 +1,382 @@
+{
+  "tickers": 20,
+  "arms": {
+    "frozen5": {
+      "avg_docs": 5.0,
+      "avg_chars": 9021.05,
+      "approx_tokens_per_run": 2255.2625,
+      "avg_strict": 2.0,
+      "avg_loose": 3.25,
+      "all_five_strict": 0,
+      "slot_hits": {
+        "财报/指引": 19,
+        "分析师动作": 9,
+        "重大事件": 3,
+        "风险/法律": 2,
+        "产品/战略": 7
+      },
+      "aggregator_share": 0.69,
+      "stories_le_3": null
+    },
+    "news5": {
+      "avg_docs": 5.0,
+      "avg_chars": 10392.0,
+      "approx_tokens_per_run": 2598.0,
+      "avg_strict": 2.45,
+      "avg_loose": 3.6,
+      "all_five_strict": 2,
+      "slot_hits": {
+        "财报/指引": 20,
+        "分析师动作": 11,
+        "重大事件": 7,
+        "风险/法律": 6,
+        "产品/战略": 5
+      },
+      "aggregator_share": 0.66,
+      "stories_le_3": null
+    },
+    "news20": {
+      "avg_docs": 20.0,
+      "avg_chars": 37527.2,
+      "approx_tokens_per_run": 9381.8,
+      "avg_strict": 3.6,
+      "avg_loose": 4.85,
+      "all_five_strict": 4,
+      "slot_hits": {
+        "财报/指引": 20,
+        "分析师动作": 15,
+        "重大事件": 14,
+        "风险/法律": 11,
+        "产品/战略": 12
+      },
+      "aggregator_share": 0.41,
+      "stories_le_3": null
+    }
+  },
+  "per_ticker": [
+    {
+      "ticker": "AAPL",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 2,
+        "news5": 2,
+        "news20": 3
+      },
+      "missing_news20": [
+        "风险/法律",
+        "产品/战略"
+      ]
+    },
+    {
+      "ticker": "MSFT",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 1,
+        "news5": 2,
+        "news20": 3
+      },
+      "missing_news20": [
+        "风险/法律",
+        "产品/战略"
+      ]
+    },
+    {
+      "ticker": "GOOGL",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 2,
+        "news5": 4,
+        "news20": 4
+      },
+      "missing_news20": [
+        "产品/战略"
+      ]
+    },
+    {
+      "ticker": "AMZN",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 2,
+        "news5": 2,
+        "news20": 5
+      },
+      "missing_news20": []
+    },
+    {
+      "ticker": "NVDA",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 3,
+        "news5": 2,
+        "news20": 4
+      },
+      "missing_news20": [
+        "分析师动作"
+      ]
+    },
+    {
+      "ticker": "META",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 4,
+        "news5": 5,
+        "news20": 5
+      },
+      "missing_news20": []
+    },
+    {
+      "ticker": "TSLA",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 3,
+        "news5": 2,
+        "news20": 4
+      },
+      "missing_news20": [
+        "风险/法律"
+      ]
+    },
+    {
+      "ticker": "JPM",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 2,
+        "news5": 1,
+        "news20": 4
+      },
+      "missing_news20": [
+        "重大事件"
+      ]
+    },
+    {
+      "ticker": "V",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 1,
+        "news5": 2,
+        "news20": 3
+      },
+      "missing_news20": [
+        "重大事件",
+        "风险/法律"
+      ]
+    },
+    {
+      "ticker": "WMT",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 4,
+        "news5": 5,
+        "news20": 5
+      },
+      "missing_news20": []
+    },
+    {
+      "ticker": "XOM",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 1,
+        "news5": 1,
+        "news20": 2
+      },
+      "missing_news20": [
+        "分析师动作",
+        "风险/法律",
+        "产品/战略"
+      ]
+    },
+    {
+      "ticker": "JNJ",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 1,
+        "news5": 2,
+        "news20": 3
+      },
+      "missing_news20": [
+        "分析师动作",
+        "风险/法律"
+      ]
+    },
+    {
+      "ticker": "SOFI",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 3,
+        "news5": 3,
+        "news20": 5
+      },
+      "missing_news20": []
+    },
+    {
+      "ticker": "ROKU",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 1,
+        "news5": 3,
+        "news20": 3
+      },
+      "missing_news20": [
+        "风险/法律",
+        "产品/战略"
+      ]
+    },
+    {
+      "ticker": "PLUG",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 1,
+        "news5": 2,
+        "news20": 2
+      },
+      "missing_news20": [
+        "重大事件",
+        "风险/法律",
+        "产品/战略"
+      ]
+    },
+    {
+      "ticker": "LCID",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 1,
+        "news5": 1,
+        "news20": 4
+      },
+      "missing_news20": [
+        "重大事件"
+      ]
+    },
+    {
+      "ticker": "NIO",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 1,
+        "news5": 3,
+        "news20": 3
+      },
+      "missing_news20": [
+        "风险/法律",
+        "产品/战略"
+      ]
+    },
+    {
+      "ticker": "BYND",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 1,
+        "news5": 4,
+        "news20": 4
+      },
+      "missing_news20": [
+        "分析师动作"
+      ]
+    },
+    {
+      "ticker": "TLRY",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 3,
+        "news5": 2,
+        "news20": 3
+      },
+      "missing_news20": [
+        "分析师动作",
+        "重大事件"
+      ]
+    },
+    {
+      "ticker": "SPCE",
+      "docs": {
+        "frozen5": 5,
+        "news5": 5,
+        "news20": 20
+      },
+      "strict": {
+        "frozen5": 3,
+        "news5": 1,
+        "news20": 3
+      },
+      "missing_news20": [
+        "重大事件",
+        "产品/战略"
+      ]
+    }
+  ]
+}
