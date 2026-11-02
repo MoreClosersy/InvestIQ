@@ -67,8 +67,14 @@ class TimeoutTavilySearchAPIWrapper(TavilySearchAPIWrapper):
         return response.json()
 
 
-def get_tavily_tool(max_results: int = 5) -> TavilySearchResults:
-    """Return a configured Tavily search tool instance."""
+def get_tavily_tool(max_results: int | None = None) -> TavilySearchResults:
+    """Return a configured Tavily search tool instance.
+
+    Result count defaults to ``TAVILY_MAX_RESULTS`` (5), so the eval can compare
+    five-result and twenty-result recordings without touching agent code.
+    """
+    if max_results is None:
+        max_results = int(os.getenv("TAVILY_MAX_RESULTS", "5"))
     wrapper = TimeoutTavilySearchAPIWrapper(
         timeout=float(os.getenv("TAVILY_TIMEOUT_SECONDS", DEFAULT_TIMEOUT_SECONDS))
     )
@@ -87,7 +93,7 @@ def search_company_news(ticker: str, company_name: str = "") -> list[dict[str, A
     LangGraph workflow can continue.
     """
     query = f"{company_name or ticker} stock news latest earnings"
-    tool = get_tavily_tool(max_results=5)
+    tool = get_tavily_tool()
     try:
         results = tool.invoke({"query": query})
     except Exception as exc:
