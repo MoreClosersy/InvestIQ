@@ -1,0 +1,466 @@
+{
+  "summary": {
+    "tickers": 24,
+    "items_total": 120,
+    "items_per_ticker": [
+      5
+    ],
+    "source_classes": {
+      "aggregator/nav": 76,
+      "other": 15,
+      "IR/regulatory": 8,
+      "social/video": 7,
+      "publisher": 14
+    },
+    "top_domains": [
+      [
+        "public.com",
+        17
+      ],
+      [
+        "finance.yahoo.com",
+        11
+      ],
+      [
+        "marketbeat.com",
+        8
+      ],
+      [
+        "investing.com",
+        6
+      ],
+      [
+        "zacks.com",
+        6
+      ],
+      [
+        "youtube.com",
+        6
+      ],
+      [
+        "google.com",
+        6
+      ],
+      [
+        "robinhood.com",
+        5
+      ],
+      [
+        "cnn.com",
+        5
+      ],
+      [
+        "stocktitan.net",
+        4
+      ],
+      [
+        "seekingalpha.com",
+        3
+      ],
+      [
+        "microsoft.com",
+        3
+      ]
+    ],
+    "distinct_story_hist": {
+      "3": 4,
+      "4": 5,
+      "5": 15
+    },
+    "slot_hist": {
+      "2": 4,
+      "3": 10,
+      "4": 6,
+      "5": 4
+    },
+    "slot_hit_rate": {
+      "财报/指引": "23/24",
+      "分析师动作": "20/24",
+      "重大事件": "13/24",
+      "风险/法律": "9/24",
+      "产品/战略": "17/24"
+    },
+    "valid_tickers": 20,
+    "valid_slot_hist": {
+      "2": 4,
+      "3": 10,
+      "4": 3,
+      "5": 3
+    },
+    "valid_slot_hit_rate": {
+      "财报/指引": "19/20",
+      "分析师动作": "18/20",
+      "重大事件": "9/20",
+      "风险/法律": "5/20",
+      "产品/战略": "14/20"
+    },
+    "valid_tickers_all_slots": 3,
+    "tickers_all_slots": 4,
+    "tickers_no_slots": 0,
+    "content_chars_median": 2026.5,
+    "content_chars_total": 231784,
+    "numbers_total": 6508
+  },
+  "per_ticker": [
+    {
+      "ticker": "AAPL",
+      "items": 5,
+      "distinct_stories": 4,
+      "slots_covered": 2,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": false,
+        "风险/法律": false,
+        "产品/战略": false
+      },
+      "numbers": 310,
+      "chars": 7579
+    },
+    {
+      "ticker": "MSFT",
+      "items": 5,
+      "distinct_stories": 3,
+      "slots_covered": 3,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": false,
+        "重大事件": true,
+        "风险/法律": false,
+        "产品/战略": true
+      },
+      "numbers": 283,
+      "chars": 9197
+    },
+    {
+      "ticker": "GOOGL",
+      "items": 5,
+      "distinct_stories": 4,
+      "slots_covered": 3,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": false,
+        "风险/法律": false,
+        "产品/战略": true
+      },
+      "numbers": 151,
+      "chars": 7074
+    },
+    {
+      "ticker": "AMZN",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 3,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": false,
+        "风险/法律": true,
+        "产品/战略": false
+      },
+      "numbers": 228,
+      "chars": 8815
+    },
+    {
+      "ticker": "NVDA",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 4,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": true,
+        "风险/法律": false,
+        "产品/战略": true
+      },
+      "numbers": 150,
+      "chars": 10632
+    },
+    {
+      "ticker": "META",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 5,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": true,
+        "风险/法律": true,
+        "产品/战略": true
+      },
+      "numbers": 170,
+      "chars": 7531
+    },
+    {
+      "ticker": "TSLA",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 3,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": true,
+        "风险/法律": false,
+        "产品/战略": false
+      },
+      "numbers": 140,
+      "chars": 6399
+    },
+    {
+      "ticker": "JPM",
+      "items": 5,
+      "distinct_stories": 4,
+      "slots_covered": 2,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": false,
+        "风险/法律": false,
+        "产品/战略": false
+      },
+      "numbers": 438,
+      "chars": 9609
+    },
+    {
+      "ticker": "V",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 4,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": true,
+        "风险/法律": false,
+        "产品/战略": true
+      },
+      "numbers": 303,
+      "chars": 10486
+    },
+    {
+      "ticker": "WMT",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 5,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": true,
+        "风险/法律": true,
+        "产品/战略": true
+      },
+      "numbers": 214,
+      "chars": 9764
+    },
+    {
+      "ticker": "XOM",
+      "items": 5,
+      "distinct_stories": 3,
+      "slots_covered": 3,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": false,
+        "风险/法律": false,
+        "产品/战略": true
+      },
+      "numbers": 245,
+      "chars": 10199
+    },
+    {
+      "ticker": "JNJ",
+      "items": 5,
+      "distinct_stories": 4,
+      "slots_covered": 3,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": false,
+        "风险/法律": false,
+        "产品/战略": true
+      },
+      "numbers": 399,
+      "chars": 10792
+    },
+    {
+      "ticker": "SOFI",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 3,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": false,
+        "风险/法律": false,
+        "产品/战略": true
+      },
+      "numbers": 266,
+      "chars": 9683
+    },
+    {
+      "ticker": "ROKU",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 3,
+      "slots": {
+        "财报/指引": false,
+        "分析师动作": true,
+        "重大事件": true,
+        "风险/法律": false,
+        "产品/战略": true
+      },
+      "numbers": 119,
+      "chars": 8002
+    },
+    {
+      "ticker": "PLUG",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 3,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": false,
+        "风险/法律": true,
+        "产品/战略": false
+      },
+      "numbers": 234,
+      "chars": 8685
+    },
+    {
+      "ticker": "LCID",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 2,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": false,
+        "风险/法律": false,
+        "产品/战略": false
+      },
+      "numbers": 241,
+      "chars": 8536
+    },
+    {
+      "ticker": "NIO",
+      "items": 5,
+      "distinct_stories": 3,
+      "slots_covered": 2,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": false,
+        "重大事件": false,
+        "风险/法律": false,
+        "产品/战略": true
+      },
+      "numbers": 169,
+      "chars": 9507
+    },
+    {
+      "ticker": "BYND",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 4,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": true,
+        "风险/法律": false,
+        "产品/战略": true
+      },
+      "numbers": 242,
+      "chars": 9670
+    },
+    {
+      "ticker": "TLRY",
+      "items": 5,
+      "distinct_stories": 4,
+      "slots_covered": 3,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": false,
+        "风险/法律": false,
+        "产品/战略": true
+      },
+      "numbers": 265,
+      "chars": 8666
+    },
+    {
+      "ticker": "SPCE",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 5,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": true,
+        "风险/法律": true,
+        "产品/战略": true
+      },
+      "numbers": 287,
+      "chars": 9595
+    },
+    {
+      "ticker": "ZZZZZZ",
+      "items": 5,
+      "distinct_stories": 3,
+      "slots_covered": 4,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": true,
+        "风险/法律": true,
+        "产品/战略": false
+      },
+      "numbers": 121,
+      "chars": 6924
+    },
+    {
+      "ticker": "INVALID",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 4,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": false,
+        "重大事件": true,
+        "风险/法律": true,
+        "产品/战略": true
+      },
+      "numbers": 163,
+      "chars": 9099
+    },
+    {
+      "ticker": "NOTAREAL",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 4,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": false,
+        "重大事件": true,
+        "风险/法律": true,
+        "产品/战略": true
+      },
+      "numbers": 92,
+      "chars": 8223
+    },
+    {
+      "ticker": "12345",
+      "items": 5,
+      "distinct_stories": 5,
+      "slots_covered": 5,
+      "slots": {
+        "财报/指引": true,
+        "分析师动作": true,
+        "重大事件": true,
+        "风险/法律": true,
+        "产品/战略": true
+      },
+      "numbers": 1278,
+      "chars": 27117
+    }
+  ]
+}
