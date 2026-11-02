@@ -101,7 +101,7 @@ from langchain_core.outputs import LLMResult  # noqa: E402
 # it does not touch the network; patching only happens when install() is called.
 from eval import fixtures  # noqa: E402
 # Contract-layer check: does every number in the report trace back to an input?
-from eval import grounding  # noqa: E402
+from tools import grounding  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Pricing (verified against OpenAI's public pricing page, developers.openai.com,
