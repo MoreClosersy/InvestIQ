@@ -4,16 +4,16 @@ from __future__ import annotations
 from tools import search_tool
 
 
-def test_default_max_results_is_five(monkeypatch) -> None:
+def test_default_max_results_is_twenty(monkeypatch) -> None:
     monkeypatch.delenv("TAVILY_MAX_RESULTS", raising=False)
     monkeypatch.setenv("TAVILY_API_KEY", "test")
-    assert search_tool.get_tavily_tool().max_results == 5
+    assert search_tool.get_tavily_tool().max_results == 20
 
 
 def test_max_results_env_override(monkeypatch) -> None:
-    monkeypatch.setenv("TAVILY_MAX_RESULTS", "20")
+    monkeypatch.setenv("TAVILY_MAX_RESULTS", "5")
     monkeypatch.setenv("TAVILY_API_KEY", "test")
-    assert search_tool.get_tavily_tool().max_results == 20
+    assert search_tool.get_tavily_tool().max_results == 5
 
 
 def test_search_company_news_uses_the_factory(monkeypatch) -> None:

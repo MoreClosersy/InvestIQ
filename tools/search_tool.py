@@ -70,11 +70,13 @@ class TimeoutTavilySearchAPIWrapper(TavilySearchAPIWrapper):
 def get_tavily_tool(max_results: int | None = None) -> TavilySearchResults:
     """Return a configured Tavily search tool instance.
 
-    Result count defaults to ``TAVILY_MAX_RESULTS`` (5), so the eval can compare
-    five-result and twenty-result recordings without touching agent code.
+    Result count defaults to ``TAVILY_MAX_RESULTS`` (20). Twenty results raised
+    strict slot coverage from 2.45 to 3.60 and removed the three ungrounded
+    numbers at 1.77x cost (docs/experiments/2026-11-02-max-results/); set the
+    variable to 5 to trade coverage back for latency and cost.
     """
     if max_results is None:
-        max_results = int(os.getenv("TAVILY_MAX_RESULTS", "5"))
+        max_results = int(os.getenv("TAVILY_MAX_RESULTS", "20"))
     wrapper = TimeoutTavilySearchAPIWrapper(
         timeout=float(os.getenv("TAVILY_TIMEOUT_SECONDS", DEFAULT_TIMEOUT_SECONDS))
     )
