@@ -1,0 +1,340 @@
+{
+  "recorded_at": "2026-11-02T13:03:19+00:00",
+  "tickers": [
+    "AAPL",
+    "JPM",
+    "LCID",
+    "NIO",
+    "SOFI"
+  ],
+  "arms": {
+    "q0_5": {
+      "searches": 1,
+      "avg_docs": 5.0,
+      "avg_loose": 3.0,
+      "avg_strict": 2.0
+    },
+    "q0_20": {
+      "searches": 1,
+      "avg_docs": 20.0,
+      "avg_loose": 5.0,
+      "avg_strict": 4.0
+    },
+    "four_q": {
+      "searches": 4,
+      "avg_docs": 19.8,
+      "avg_loose": 4.8,
+      "avg_strict": 4.4
+    }
+  },
+  "curves": {
+    "q0_20": [
+      {
+        "n": 5,
+        "avg_strict": 1.8
+      },
+      {
+        "n": 10,
+        "avg_strict": 3.0
+      },
+      {
+        "n": 15,
+        "avg_strict": 3.4
+      },
+      {
+        "n": 20,
+        "avg_strict": 4.0
+      }
+    ],
+    "four_q": [
+      {
+        "n": 5,
+        "avg_strict": 2.0
+      },
+      {
+        "n": 10,
+        "avg_strict": 3.0
+      },
+      {
+        "n": 15,
+        "avg_strict": 3.2
+      },
+      {
+        "n": 20,
+        "avg_strict": 4.4
+      }
+    ]
+  },
+  "false_positive_examples": [
+    {
+      "ticker": "AAPL",
+      "slot": "风险/法律",
+      "domain": "finance.yahoo.com",
+      "title": "Apple Inc. (AAPL) Latest Stock News & Headlines - Yahoo Finance",
+      "snippet": "M EST  All  News  Earnings Calls  Press Releases  SEC Filings   Apple to report Q4 earnings Monday, wit"
+    },
+    {
+      "ticker": "AAPL",
+      "slot": "分析师动作",
+      "domain": "cmelitegroup.com",
+      "title": "Apple Earnings Date: Q4 FY2026 Time and Estimates | CapitalMEG",
+      "snippet": "ns. A result near the top would point to a strong upgrade cycle. 2. iPhone sales. The quarter includes the "
+    },
+    {
+      "ticker": "AAPL",
+      "slot": "分析师动作",
+      "domain": "chartmill.com",
+      "title": "AAPL Earnings & Revenue Estimates, Forecasts & Revisions | ChartMill.c",
+      "snippet": "w consensus estimates. Hover or focus a value for analyst count and low–high range when supplied. Past peri"
+    },
+    {
+      "ticker": "AAPL",
+      "slot": "财报/指引",
+      "domain": "marketwatch.com",
+      "title": "AAPL | Apple Inc. Analyst Estimates | MarketWatch",
+      "snippet": "[]( |  View All Upgrades & Downgrades  ## FY 2026 EPS Estimate Trends  Current$8.84 1 Month Ago$8.84 3 "
+    }
+  ],
+  "per_ticker": [
+    {
+      "ticker": "AAPL",
+      "docs": {
+        "q0_5": 5,
+        "q0_20": 20,
+        "four_q": 20
+      },
+      "strict": {
+        "q0_5": [
+          "分析师动作",
+          "财报/指引"
+        ],
+        "q0_20": [
+          "分析师动作",
+          "财报/指引",
+          "重大事件"
+        ],
+        "four_q": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "风险/法律"
+        ]
+      },
+      "loose": {
+        "q0_5": [
+          "分析师动作",
+          "财报/指引",
+          "风险/法律"
+        ],
+        "q0_20": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ],
+        "four_q": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "风险/法律"
+        ]
+      }
+    },
+    {
+      "ticker": "JPM",
+      "docs": {
+        "q0_5": 5,
+        "q0_20": 20,
+        "four_q": 20
+      },
+      "strict": {
+        "q0_5": [
+          "财报/指引"
+        ],
+        "q0_20": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "风险/法律"
+        ],
+        "four_q": [
+          "分析师动作",
+          "财报/指引",
+          "风险/法律"
+        ]
+      },
+      "loose": {
+        "q0_5": [
+          "分析师动作",
+          "财报/指引"
+        ],
+        "q0_20": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ],
+        "four_q": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ]
+      }
+    },
+    {
+      "ticker": "LCID",
+      "docs": {
+        "q0_5": 5,
+        "q0_20": 20,
+        "four_q": 19
+      },
+      "strict": {
+        "q0_5": [
+          "财报/指引"
+        ],
+        "q0_20": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ],
+        "four_q": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ]
+      },
+      "loose": {
+        "q0_5": [
+          "财报/指引",
+          "风险/法律"
+        ],
+        "q0_20": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ],
+        "four_q": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ]
+      }
+    },
+    {
+      "ticker": "NIO",
+      "docs": {
+        "q0_5": 5,
+        "q0_20": 20,
+        "four_q": 20
+      },
+      "strict": {
+        "q0_5": [
+          "分析师动作",
+          "财报/指引",
+          "重大事件"
+        ],
+        "q0_20": [
+          "分析师动作",
+          "财报/指引",
+          "风险/法律"
+        ],
+        "four_q": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ]
+      },
+      "loose": {
+        "q0_5": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件"
+        ],
+        "q0_20": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ],
+        "four_q": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ]
+      }
+    },
+    {
+      "ticker": "SOFI",
+      "docs": {
+        "q0_5": 5,
+        "q0_20": 20,
+        "four_q": 20
+      },
+      "strict": {
+        "q0_5": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引"
+        ],
+        "q0_20": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ],
+        "four_q": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ]
+      },
+      "loose": {
+        "q0_5": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "风险/法律"
+        ],
+        "q0_20": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ],
+        "four_q": [
+          "产品/战略",
+          "分析师动作",
+          "财报/指引",
+          "重大事件",
+          "风险/法律"
+        ]
+      }
+    }
+  ],
+  "source_mix": {
+    "aggregator": 38,
+    "other": 61
+  }
+}
