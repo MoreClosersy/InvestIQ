@@ -1,0 +1,493 @@
+{
+  "generated_at": "2026-11-03T05:22:16+00:00",
+  "cassette": "eval/cassettes/news20_20261102.json",
+  "tickers": 24,
+  "valid_tickers": 20,
+  "valid_with_violations": 0,
+  "valid_with_ungrounded": 0,
+  "total_ungrounded": 0,
+  "empty_sections": 0,
+  "items_with_numbers_ratio": 0.9333333333333333,
+  "rows": [
+    {
+      "ticker": "AAPL",
+      "invalid": false,
+      "elapsed_s": 20.66,
+      "violations": [],
+      "grounding": {
+        "total": 27,
+        "financial": 4,
+        "news_only": 23,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 3,
+        "risks": 3,
+        "items": 6,
+        "items_with_numbers": 6
+      },
+      "strengths": 3,
+      "report_chars": 3328
+    },
+    {
+      "ticker": "MSFT",
+      "invalid": false,
+      "elapsed_s": 18.03,
+      "violations": [],
+      "grounding": {
+        "total": 30,
+        "financial": 5,
+        "news_only": 25,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 5,
+        "risks": 5,
+        "items": 10,
+        "items_with_numbers": 10
+      },
+      "strengths": 5,
+      "report_chars": 3660
+    },
+    {
+      "ticker": "GOOGL",
+      "invalid": false,
+      "elapsed_s": 14.56,
+      "violations": [],
+      "grounding": {
+        "total": 25,
+        "financial": 0,
+        "news_only": 25,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 3,
+        "risks": 3,
+        "items": 6,
+        "items_with_numbers": 6
+      },
+      "strengths": 3,
+      "report_chars": 2927
+    },
+    {
+      "ticker": "AMZN",
+      "invalid": false,
+      "elapsed_s": 13.15,
+      "violations": [],
+      "grounding": {
+        "total": 18,
+        "financial": 4,
+        "news_only": 14,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 3,
+        "risks": 3,
+        "items": 6,
+        "items_with_numbers": 6
+      },
+      "strengths": 3,
+      "report_chars": 3366
+    },
+    {
+      "ticker": "NVDA",
+      "invalid": false,
+      "elapsed_s": 15.39,
+      "violations": [],
+      "grounding": {
+        "total": 21,
+        "financial": 2,
+        "news_only": 19,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 4,
+        "risks": 4,
+        "items": 8,
+        "items_with_numbers": 7
+      },
+      "strengths": 4,
+      "report_chars": 3293
+    },
+    {
+      "ticker": "META",
+      "invalid": false,
+      "elapsed_s": 14.64,
+      "violations": [],
+      "grounding": {
+        "total": 22,
+        "financial": 4,
+        "news_only": 18,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 4,
+        "risks": 4,
+        "items": 8,
+        "items_with_numbers": 6
+      },
+      "strengths": 4,
+      "report_chars": 3847
+    },
+    {
+      "ticker": "TSLA",
+      "invalid": false,
+      "elapsed_s": 13.93,
+      "violations": [],
+      "grounding": {
+        "total": 19,
+        "financial": 4,
+        "news_only": 15,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 3,
+        "risks": 3,
+        "items": 6,
+        "items_with_numbers": 5
+      },
+      "strengths": 3,
+      "report_chars": 3581
+    },
+    {
+      "ticker": "JPM",
+      "invalid": false,
+      "elapsed_s": 17.06,
+      "violations": [],
+      "grounding": {
+        "total": 22,
+        "financial": 5,
+        "news_only": 17,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 4,
+        "risks": 4,
+        "items": 8,
+        "items_with_numbers": 6
+      },
+      "strengths": 4,
+      "report_chars": 3654
+    },
+    {
+      "ticker": "V",
+      "invalid": false,
+      "elapsed_s": 16.23,
+      "violations": [],
+      "grounding": {
+        "total": 29,
+        "financial": 6,
+        "news_only": 23,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 5,
+        "risks": 5,
+        "items": 10,
+        "items_with_numbers": 10
+      },
+      "strengths": 5,
+      "report_chars": 3748
+    },
+    {
+      "ticker": "WMT",
+      "invalid": false,
+      "elapsed_s": 14.12,
+      "violations": [],
+      "grounding": {
+        "total": 26,
+        "financial": 7,
+        "news_only": 19,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 4,
+        "risks": 4,
+        "items": 8,
+        "items_with_numbers": 8
+      },
+      "strengths": 4,
+      "report_chars": 3263
+    },
+    {
+      "ticker": "XOM",
+      "invalid": false,
+      "elapsed_s": 16.46,
+      "violations": [],
+      "grounding": {
+        "total": 25,
+        "financial": 6,
+        "news_only": 19,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 4,
+        "risks": 4,
+        "items": 8,
+        "items_with_numbers": 7
+      },
+      "strengths": 4,
+      "report_chars": 3644
+    },
+    {
+      "ticker": "JNJ",
+      "invalid": false,
+      "elapsed_s": 14.17,
+      "violations": [],
+      "grounding": {
+        "total": 15,
+        "financial": 5,
+        "news_only": 10,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 4,
+        "risks": 4,
+        "items": 8,
+        "items_with_numbers": 8
+      },
+      "strengths": 4,
+      "report_chars": 3599
+    },
+    {
+      "ticker": "SOFI",
+      "invalid": false,
+      "elapsed_s": 17.34,
+      "violations": [],
+      "grounding": {
+        "total": 30,
+        "financial": 11,
+        "news_only": 19,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 5,
+        "risks": 4,
+        "items": 9,
+        "items_with_numbers": 9
+      },
+      "strengths": 5,
+      "report_chars": 3374
+    },
+    {
+      "ticker": "ROKU",
+      "invalid": false,
+      "elapsed_s": 20.56,
+      "violations": [],
+      "grounding": {
+        "total": 27,
+        "financial": 6,
+        "news_only": 21,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 4,
+        "risks": 4,
+        "items": 8,
+        "items_with_numbers": 7
+      },
+      "strengths": 4,
+      "report_chars": 3695
+    },
+    {
+      "ticker": "PLUG",
+      "invalid": false,
+      "elapsed_s": 16.26,
+      "violations": [],
+      "grounding": {
+        "total": 28,
+        "financial": 8,
+        "news_only": 20,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 4,
+        "risks": 4,
+        "items": 8,
+        "items_with_numbers": 8
+      },
+      "strengths": 4,
+      "report_chars": 3242
+    },
+    {
+      "ticker": "LCID",
+      "invalid": false,
+      "elapsed_s": 15.02,
+      "violations": [],
+      "grounding": {
+        "total": 24,
+        "financial": 3,
+        "news_only": 21,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 3,
+        "risks": 3,
+        "items": 6,
+        "items_with_numbers": 6
+      },
+      "strengths": 3,
+      "report_chars": 3370
+    },
+    {
+      "ticker": "NIO",
+      "invalid": false,
+      "elapsed_s": 15.48,
+      "violations": [],
+      "grounding": {
+        "total": 29,
+        "financial": 2,
+        "news_only": 27,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 4,
+        "risks": 4,
+        "items": 8,
+        "items_with_numbers": 7
+      },
+      "strengths": 4,
+      "report_chars": 3329
+    },
+    {
+      "ticker": "BYND",
+      "invalid": false,
+      "elapsed_s": 14.66,
+      "violations": [],
+      "grounding": {
+        "total": 16,
+        "financial": 4,
+        "news_only": 12,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 3,
+        "risks": 4,
+        "items": 7,
+        "items_with_numbers": 6
+      },
+      "strengths": 3,
+      "report_chars": 3366
+    },
+    {
+      "ticker": "TLRY",
+      "invalid": false,
+      "elapsed_s": 14.88,
+      "violations": [],
+      "grounding": {
+        "total": 25,
+        "financial": 0,
+        "news_only": 25,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 3,
+        "risks": 3,
+        "items": 6,
+        "items_with_numbers": 6
+      },
+      "strengths": 3,
+      "report_chars": 3139
+    },
+    {
+      "ticker": "SPCE",
+      "invalid": false,
+      "elapsed_s": 17.47,
+      "violations": [],
+      "grounding": {
+        "total": 21,
+        "financial": 4,
+        "news_only": 17,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 3,
+        "risks": 3,
+        "items": 6,
+        "items_with_numbers": 6
+      },
+      "strengths": 3,
+      "report_chars": 3138
+    },
+    {
+      "ticker": "ZZZZZZ",
+      "invalid": true,
+      "elapsed_s": 1.91,
+      "violations": [],
+      "grounding": {
+        "total": 0,
+        "financial": 0,
+        "news_only": 0,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 0,
+        "risks": 0,
+        "items": 0,
+        "items_with_numbers": 0
+      },
+      "strengths": 0,
+      "report_chars": 278
+    },
+    {
+      "ticker": "INVALID",
+      "invalid": true,
+      "elapsed_s": 2.88,
+      "violations": [],
+      "grounding": {
+        "total": 0,
+        "financial": 0,
+        "news_only": 0,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 0,
+        "risks": 0,
+        "items": 0,
+        "items_with_numbers": 0
+      },
+      "strengths": 0,
+      "report_chars": 282
+    },
+    {
+      "ticker": "NOTAREAL",
+      "invalid": true,
+      "elapsed_s": 1.77,
+      "violations": [],
+      "grounding": {
+        "total": 0,
+        "financial": 0,
+        "news_only": 0,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 0,
+        "risks": 0,
+        "items": 0,
+        "items_with_numbers": 0
+      },
+      "strengths": 0,
+      "report_chars": 286
+    },
+    {
+      "ticker": "12345",
+      "invalid": true,
+      "elapsed_s": 1.74,
+      "violations": [],
+      "grounding": {
+        "total": 0,
+        "financial": 0,
+        "news_only": 0,
+        "ungrounded": 0
+      },
+      "metrics": {
+        "strengths": 0,
+        "risks": 0,
+        "items": 0,
+        "items_with_numbers": 0
+      },
+      "strengths": 0,
+      "report_chars": 274
+    }
+  ]
+}

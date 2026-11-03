@@ -72,9 +72,9 @@ def main() -> int:
         ),
         "rows": rows,
     }
-    (OUT / "shadow.json").write_text(
+    (OUT / "shadow_online.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-    (OUT / "report.md").write_text(_render(summary), encoding="utf-8")
+    (OUT / "report_online.md").write_text(_render(summary), encoding="utf-8")
     print(json.dumps({k: v for k, v in summary.items() if k != "rows"},
                      ensure_ascii=False, indent=2))
     return 0
